@@ -102,14 +102,14 @@ label {
   flex-direction: row;
 }
 .task-complete {
-  background: rgb(43, 255, 0);
+  background: #39ff14;
   width: 50px;
   height: 50px;
   display: grid;
   place-content: center;
 }
 .task-delete {
-  background: #f00;
+  background: rgb(210, 39, 48);
   width: 50px;
   height: 50px;
   display: grid;
@@ -119,9 +119,8 @@ label {
   border-left: 4px solid green;
 }
 .completed {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.2);
   text-decoration: line-through;
   transition: all 0.5s ease-in-out;
   transition-property: background;
-  color: white;
 }

@@ -6,9 +6,30 @@ import './App.css';
 
 function App() {
   const [taskStatus, setStatus] = useState('all')
-  const [tasks, setTasks] = useState([]);
-  const [filteredTasks, setFilteredTask] = useState([...tasks])
+  let [tasks, setTasks] = useState([]);
+  let [filteredTasks, setFilteredTask] = useState([...tasks])
 
+  useEffect(() => {
+    getLocal()
+  }, [])
+
+  useEffect(() => {
+    filterTask()
+    saveLocal()
+  }, [tasks, taskStatus])
+
+  const saveLocal = () => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }
+  const getLocal = () => {
+    if (JSON.parse(localStorage.getItem('tasks')) === null)
+      localStorage.setItem('tasks', JSON.stringify([]))
+    else {
+      let local = JSON.parse(localStorage.getItem('tasks'))
+      setTasks(local)
+
+    }
+  }
   // filter tasks
   const filterTask = () => {
     console.log(taskStatus)
@@ -19,10 +40,8 @@ function App() {
     else
       setFilteredTask(tasks.filter((task) => task.status === false))
   }
-  useEffect(() => {
-    filterTask()
-  }, [tasks, taskStatus])
-  
+
+
   //add task
   const addTask = (task) => {
     const id = Math.floor(Math.random() * 10000 + 1)
