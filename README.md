@@ -1,3 +1,17 @@
+# How to use
+
+Add the tasks using the form
+
+Green button for toggle between whether task is completed or not
+
+Red button for deleting the task
+
+Double click to toggle the reminder
+
+Filter the task using the select options given above the forms
+
+-----------------------------------------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
